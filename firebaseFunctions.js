@@ -11,7 +11,7 @@ firebase.auth()
   });
 */
 
-// racism
+// racism dvid
 
 export function sendRequest(request, addComplete){
     firebase.firestore()
