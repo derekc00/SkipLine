@@ -11,6 +11,8 @@ firebase.auth()
   });
 */
 
+// racism
+
 export function sendRequest(request, addComplete){
     firebase.firestore()
     .collection('Requests')
