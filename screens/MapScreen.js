@@ -12,6 +12,7 @@ import {Dimensions} from 'react-native';
 export default function MapScreen() {
   return (
 
+    //dasdaskdbasdjhfbasdjlhfb
     // <View>
     <View style={styles.container}>
       <View style= {styles.mapContainer}>
