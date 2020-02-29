@@ -1,11 +1,21 @@
 class Request {
     constructor(){
-        this.location;
-        this.address;
-        this.price;
-        this.restaurant_name;
-        this.party_size;
-        this.pending;
+        this.name            = '';
+        this.location        = '';
+        this.address         = '';
+        this.price           = 0;
+        this.restaurant_name = '';
+        this.party_size      = 0;
+        this.complete        = false;
+        this.status          = 'incomplete';
+    }
+
+    set name(s){
+        this.name = name;
+    }
+
+    get name(){
+        this.name;
     }
 
     set location(latitutde, longitude){
@@ -46,5 +56,16 @@ class Request {
 
     get party_size(){
         return this.party_size;
+    }
+
+    isComplete(){
+        if (this.complete == true){
+            return true;
+        }
+        if (name != "" && location != "" && address != "" && restaurant_name != ""){
+            this.complete = true;
+            return true;
+        }
+        return false;
     }
 }
