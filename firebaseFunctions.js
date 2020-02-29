@@ -13,6 +13,7 @@ firebase.auth()
 
 // racism Derekkkk
 
+
 export function sendRequest(request, addComplete){
     firebase.firestore()
     .collection('Requests')
