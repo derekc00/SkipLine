@@ -31,6 +31,8 @@ export default function HomeScreen() {
 
           <Text style={styles.getStartedText}>
             Change any of the text, save the file, anatically reload.I PULLED THIS SHITDavidddddd
+
+            example feature
           </Text>
         </View>
 
