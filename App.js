@@ -22,6 +22,7 @@ export default function App(props) {
     async function loadResourcesAndDataAsync() {
       try {
         SplashScreen.preventAutoHide();
+        setTimeout(SplashScreen.hide, 1000);
 
         // Load our initial navigation state
         setInitialNavigationState(await getInitialState());
