@@ -29,7 +29,7 @@ export default function BottomTabNavigator({ navigation, route }) {
         component={HomeScreen}
         options={{
           title: 'getInfo',
-          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-code-working" />,
+          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-copy" />,
         }}
       />
       <BottomTab.Screen
@@ -37,7 +37,7 @@ export default function BottomTabNavigator({ navigation, route }) {
         component={ReservationScreen}
         options={{
           title: 'Reservation',
-          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="ios-cloud" />,
+          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-information-circle-outline" />,
         }}
       />
       

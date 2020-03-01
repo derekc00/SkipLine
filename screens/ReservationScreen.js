@@ -19,6 +19,9 @@ export default function ReservationScreen() {
       <Text style={styles.optionText, styles.option}>
         {'Total: '}
       </Text>
+      <Text style={styles.optionText, styles.option}>
+        {'Time: '}
+      </Text>
       <OptionButton
         icon="md-remove-circle"
         label="Cancel"
