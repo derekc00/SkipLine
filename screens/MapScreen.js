@@ -4,22 +4,20 @@ import {
   Platform,
   StyleSheet,
   Text,
+  FlatList,
   TouchableOpacity,
   View
 } from "react-native";
 import { ScrollView, TextInput } from "react-native-gesture-handler";
-import * as WebBrowser from "expo-web-browser";
 import MapView, { PROVIDER_GOOGLE, Marker } from "react-native-maps";
 
-import * as Location from "expo-location";
-import * as Permissions from "expo-permissions";
-import MySearchBar from "../components/SearchBar";
 import { Dimensions } from "react-native";
 
 export default class MapScreen extends React.Component {
   constructor(props) {
     super(props);
 
+    this.props = props;
     this.state = {
       latitude: 0,
       longitude: 0,
@@ -67,7 +65,9 @@ export default class MapScreen extends React.Component {
   }
 
   chooseDestination(destination) {
-    console.log({destination})
+    // console.log({destination})
+    //navigate to another screen
+    this.props.navigation.navigate("InfoForm", destination);
   }
 
   render() {
@@ -150,6 +150,6 @@ const styles = StyleSheet.create({
   }
 });
 
-MapScreen.navigationOptions = {
-  header: null
-};
+// MapScreen.navigationOptions = {
+//   header: null
+// };
