@@ -23,6 +23,7 @@ export default function App(props) {
   React.useEffect(() => {
     async function loadResourcesAndDataAsync() {
       try {
+
         SplashScreen.preventAutoHide();
         setTimeout(SplashScreen.hide, 1000);
 
