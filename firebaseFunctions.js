@@ -1,5 +1,7 @@
-import firebase from 'react-native-firebase';
+//import firebase from 'react-native-firebase';
 import { Request } from './consumerRequests';
+import * as firebase from 'firebase';
+import '@firebase/firestore';
 
 /*
 firebase.auth()
@@ -12,18 +14,28 @@ firebase.auth()
 */
 
 
+
 export function sendRequest(request, addComplete){
+    const firebaseConfig = { 
+        apiKey: "AIzaSyAkia1lQi1pkrLZS0YTBXuZW5LMCGGPjyI",
+        authDomain: "skipline-5cd96.firebaseapp.com",
+        databaseURL: "https://skipline-5cd96.firebaseio.com",
+        projectId: "skipline-5cd96",
+    }
+
+    if (!firebase.apps.length) {firebase.initializeApp(firebaseConfig)};
+
     firebase.firestore()
-    .collection('Requests')
-    .collection(request.name)
+    .collection("request")
     .add({
-        userID:                 request.name,
-        restaurantCoordinates:  request.restaurant_name,
-        address:                request.address,
-        partySize:              request.partySize,
-        price:                  request.price,
-        restaurant_name:        request.restaurant_name,
-        status:                 request.status,
+        // userID:                 request.name,
+        // restaurantCoordinates:  request.restaurant_name,
+        // address:                request.address,
+        // partySize:              request.partySize,
+        // price:                  request.price,
+        // restaurant_name:        request.restaurant_name,
+        // status:                 request.status,
+        userID: "test",
         createdAt:              firebase.firestore.FieldValue.serverTimestamp()
     }).then((data) => addComplete(data))
     .catch((error) => console.log(error))

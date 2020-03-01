@@ -9,6 +9,7 @@ import { Request } from '../consumerRequests';
 import { sendRequest } from '../firebaseFunctions';
 
 export default function HomeScreen() {
+  
   const request = new Request();
   return (
     <View style={styles.container}>
