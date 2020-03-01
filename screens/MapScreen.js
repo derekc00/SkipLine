@@ -57,7 +57,7 @@ export default class MapScreen extends React.Component {
     try {
       const result = await fetch(apiURL);
       const json = await result.json();
-      console.log(json);
+      // console.log(json);
       this.setState({
         predictions: json.predictions
       });
@@ -66,9 +66,15 @@ export default class MapScreen extends React.Component {
     }
   }
 
+  chooseDestination(destination) {
+    console.log({destination})
+  }
+
   render() {
     const predictions = this.state.predictions.map(prediction => (
-      <Text style={styles.suggestions} key={prediction.id}>{prediction.description}</Text>
+      <Text style={styles.suggestions} key={prediction.id} onPress={() => this.chooseDestination(prediction)}>
+        {prediction.description}
+      </Text>
     ));
 
     return (
@@ -126,9 +132,9 @@ const styles = StyleSheet.create({
     height: 40
   },
   destinationInput: {
-    height: 40,
+    height: 50,
     borderWidth: 1,
-    marginTop: 50,
+    marginTop: 5,
     marginLeft: 5,
     marginRight: 5,
     padding: 5,
