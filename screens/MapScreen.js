@@ -24,25 +24,26 @@ export default class MapScreen extends React.Component {
   componentDidMount() {
     
 
-    navigator.geolocation.getCurrentPosition(position => {
-      this.setState({
-        latitude: position.latitude,
-        longitude: position.longitude,
-        error: null
-      });
+    navigator.geolocation.getCurrentPosition(
+      position => {
+      console.log(position)
+      
+        this.setState({
+          latitude: position.coords.latitude,
+          longitude: position.coords.longitude,
+          error: null
+        },
+        function() { console.log("setState completesd", this.state) }
+        );
     },
     error => this.setState({error: error.message}),
       {enableHighAccuracy: true, timeout: 20000, maximumAge: 2000}
+    
     );
-
-    console.log(this.state.latitude, this.state.longitude)
-    console.log("a")
   }
   render() {
     return (
 
-      //dasdaskdbasdjhfbasdjlhfb
-      // <View>
       <View style={styles.container}>
         <View style= {styles.mapContainer}>
           <MapView
@@ -50,11 +51,11 @@ export default class MapScreen extends React.Component {
             style={{
               flex: 1
             }}
-            initialRegion={{
-              latitude: 37.78825,
-              longitude: -122.4324,
-              latitudeDelta: 0.0922,
-              longitudeDelta: 0.0421
+            region={{
+              latitude: this.state.latitude,
+              longitude: this.state.longitude,
+              latitudeDelta: .2,
+              longitudeDelta: .2
             }}
             
           />
