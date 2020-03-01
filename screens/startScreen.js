@@ -37,7 +37,7 @@ export default function startScreen({ navigation }) {
             </View>
 
             <View>
-                <AwesomeButtonRick onPress={pressHandler}
+                <AwesomeButtonRick
                     type="secondary"
                 > look for requests
                 </AwesomeButtonRick>
