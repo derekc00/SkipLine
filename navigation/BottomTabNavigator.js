@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import TabBarIcon from '../components/TabBarIcon';
-import HomeScreen from '../screens/HomeScreen';
+import HomeScreen from '../screens/infoForm';
 import MapScreen from '../screens/MapScreen';
 import ReservationScreen from '../screens/ReservationScreen';
 import Loading from '../screens/Loading';
@@ -46,7 +46,7 @@ export default function BottomTabNavigator({ navigation, route }) {
         component={Loading}
         options={{
           title: 'Loading',
-          tabBarIcon: ({focused}) => <TabBarIcon focused={focused} name="md-refresh"/>,
+          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-refresh" />,
         }}
       />
     </BottomTab.Navigator>
@@ -58,7 +58,7 @@ function getHeaderTitle(route) {
 
   switch (routeName) {
     case 'Home':
-      return 'Request Form';  
+      return 'Request Form';
     case 'Reservation':
       return 'Reservation Status';
     case 'Map':
