@@ -4,7 +4,6 @@ import * as firebase from 'firebase';
 import '@firebase/firestore';
 
 export function sendRequest(request, addComplete) {
-    console.log("a");
 
     const firebaseConfig = {
         apiKey: "AIzaSyAkia1lQi1pkrLZS0YTBXuZW5LMCGGPjyI",

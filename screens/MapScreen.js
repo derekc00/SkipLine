@@ -4,22 +4,20 @@ import {
   Platform,
   StyleSheet,
   Text,
+  FlatList,
   TouchableOpacity,
   View
 } from "react-native";
 import { ScrollView, TextInput } from "react-native-gesture-handler";
-import * as WebBrowser from "expo-web-browser";
 import MapView, { PROVIDER_GOOGLE, Marker } from "react-native-maps";
 
-import * as Location from "expo-location";
-import * as Permissions from "expo-permissions";
-import MySearchBar from "../components/SearchBar";
 import { Dimensions } from "react-native";
 
 export default class MapScreen extends React.Component {
   constructor(props) {
     super(props);
 
+    this.props = props;
     this.state = {
       latitude: 0,
       longitude: 0,
@@ -57,7 +55,7 @@ export default class MapScreen extends React.Component {
     try {
       const result = await fetch(apiURL);
       const json = await result.json();
-      console.log(json);
+      // console.log(json);
       this.setState({
         predictions: json.predictions
       });
@@ -66,9 +64,17 @@ export default class MapScreen extends React.Component {
     }
   }
 
+  chooseDestination(destination) {
+    // console.log({destination})
+    //navigate to another screen
+    this.props.navigation.navigate("InfoForm", destination);
+  }
+
   render() {
     const predictions = this.state.predictions.map(prediction => (
-      <Text style={styles.suggestions} key={prediction.id}>{prediction.description}</Text>
+      <Text style={styles.suggestions} key={prediction.id} onPress={() => this.chooseDestination(prediction)}>
+        {prediction.description}
+      </Text>
     ));
 
     return (
@@ -126,9 +132,9 @@ const styles = StyleSheet.create({
     height: 40
   },
   destinationInput: {
-    height: 40,
+    height: 50,
     borderWidth: 1,
-    marginTop: 50,
+    marginTop: 5,
     marginLeft: 5,
     marginRight: 5,
     padding: 5,
@@ -144,6 +150,6 @@ const styles = StyleSheet.create({
   }
 });
 
-MapScreen.navigationOptions = {
-  header: null
-};
+// MapScreen.navigationOptions = {
+//   header: null
+// };
