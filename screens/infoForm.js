@@ -66,13 +66,14 @@ export default function infoForm({ navigation }) {
             sendRequest(request);
             navigation.push("Confirmed")
             setTimeout(() => { navigation.pop(); }, 1650);
-            setTimeout(() => { navigation.push("ReservationScreen"); }, 1650);
+            // setTimeout(() => { navigation.push("ReservationScreen", request); }, 1650);
+            setTimeout(() => { navigation.navigate("ReservationScreen", { location: request.restaurant_name, status: request.status, total: request.price }); }, 1650);
           }}
           title="send request"
           color="white"
         ></Button>
       </View>
-    </View>
+    </View >
   );
 }
 

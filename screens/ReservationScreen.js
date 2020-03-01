@@ -4,20 +4,22 @@ import { Ionicons } from '@expo/vector-icons';
 import * as WebBrowser from 'expo-web-browser';
 import { RectButton, ScrollView } from 'react-native-gesture-handler';
 
-export default function ReservationScreen() {
+import { Request } from "../consumerRequests";
+
+export default function ReservationScreen({ navigation }) {
 
   return (
     <View style={styles.container} contentContainerStyle={styles.contentContainer}>
 
-      <Image source = {{uri :"https://images-prod.healthline.com/hlcmsresource/images/AN_images/healthy-eating-ingredients-1296x728-header.jpg"}} style = {styles.imageSize}></Image>
+      <Image source={{ uri: "https://images-prod.healthline.com/hlcmsresource/images/AN_images/healthy-eating-ingredients-1296x728-header.jpg" }} style={styles.imageSize}></Image>
       <Text style={styles.optionText, styles.option}>
-        {'Location: '}
+        {'Location: ' + navigation.getParam('location')}
       </Text>
       <Text style={styles.optionText, styles.option}>
-        {'Status: '}
+        {'Status: ' + navigation.getParam('status')}
       </Text>
       <Text style={styles.optionText, styles.option}>
-        {'Total: '}
+        {'Total: ' + navigation.getParam('total')}
       </Text>
       <Text style={styles.optionText, styles.option}>
         {'Time: '}
@@ -26,14 +28,14 @@ export default function ReservationScreen() {
         icon="md-remove-circle"
         label="Cancel"
         onPress={() => WebBrowser.openBrowserAsync('https://reactnavigation.org')}
-        c = "rgba(128,0,0,1)"
+        c="rgba(128,0,0,1)"
       />
 
       <OptionButton
         icon="md-thumbs-up"
         label="Confirm"
         onPress={() => WebBrowser.openBrowserAsync('https://forums.expo.io')}
-        c = "rgba(0,128,0,1)"
+        c="rgba(0,128,0,1)"
         isLastOption
       />
     </View>
@@ -84,6 +86,6 @@ const styles = StyleSheet.create({
   },
   imageSize: {
     width: Math.round(Dimensions.get('window').width),
-    height: Math.round(Dimensions.get('window').height)/4,
+    height: Math.round(Dimensions.get('window').height) / 4,
   },
 });
