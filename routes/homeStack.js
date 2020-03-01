@@ -6,6 +6,7 @@ import Loading from "../screens/Loading";
 import ReservationScreen from "../screens/ReservationScreen";
 import StartScreen from "../screens/startScreen";
 import Confirmed from "../screens/Confirmed";
+import Requests from "../screens/Requests";
 
 const screens = {
   //setup params. call it whatever you want
@@ -27,6 +28,9 @@ const screens = {
   },
   ReservationScreen: {
     screen: ReservationScreen
+  },
+  Requests: {
+    screen: Requests
   }
 };
 const HomeStack = createStackNavigator(screens);
