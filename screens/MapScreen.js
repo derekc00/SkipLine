@@ -22,6 +22,8 @@ export default class MapScreen extends React.Component {
   }
 
   componentDidMount() {
+    
+
     navigator.geolocation.getCurrentPosition(position => {
       this.setState({
         latitude: position.latitude,
@@ -32,6 +34,9 @@ export default class MapScreen extends React.Component {
     error => this.setState({error: error.message}),
       {enableHighAccuracy: true, timeout: 20000, maximumAge: 2000}
     );
+
+    console.log(this.state.latitude, this.state.longitude)
+    console.log("a")
   }
   render() {
     return (
