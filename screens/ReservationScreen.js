@@ -59,8 +59,11 @@ export default function ReservationScreen({ navigation }) {
 
 function OptionButton({ icon, label, onPress, c, isLastOption }) {
   return (
-    <RectButton style={[styles.option, isLastOption && styles.lastOption]} onPress={onPress}>
-      <View style={{ flexDirection: 'row' }}>
+    <RectButton
+      style={[styles.option, isLastOption && styles.lastOption]}
+      onPress={onPress}
+    >
+      <View style={{ flexDirection: "row" }}>
         <View style={styles.optionIconContainer}>
           <Ionicons name={icon} size={22} color={c} />
         </View>
@@ -79,32 +82,32 @@ ReservationScreen.navigationOptions = {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fafafa',
+    backgroundColor: "#fafafa"
   },
   contentContainer: {
-    paddingTop: 15,
+    paddingTop: 15
   },
   optionIconContainer: {
-    marginRight: 12,
+    marginRight: 12
   },
   option: {
-    backgroundColor: '#fdfdfd',
+    backgroundColor: "#fdfdfd",
     paddingHorizontal: 15,
     paddingVertical: 15,
     borderWidth: StyleSheet.hairlineWidth,
     borderBottomWidth: 0,
-    borderColor: '#ededed',
+    borderColor: "#ededed"
   },
   lastOption: {
-    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomWidth: StyleSheet.hairlineWidth
   },
   optionText: {
     fontSize: 15,
-    alignSelf: 'flex-start',
-    marginTop: 1,
+    alignSelf: "flex-start",
+    marginTop: 1
   },
   imageSize: {
-    width: Math.round(Dimensions.get('window').width),
-    height: Math.round(Dimensions.get('window').height) / 4,
-  },
+    width: Math.round(Dimensions.get("window").width),
+    height: Math.round(Dimensions.get("window").height) / 4
+  }
 });

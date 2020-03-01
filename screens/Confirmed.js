@@ -34,6 +34,7 @@ export default class Confirmed extends React.Component {
 
         />
       </View>
+
     );
   }
 }

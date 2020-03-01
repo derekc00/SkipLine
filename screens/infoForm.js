@@ -18,11 +18,43 @@ import { MonoText } from "../components/StyledText";
 import { Request } from "../consumerRequests";
 import { sendRequest } from "../firebaseFunctions";
 
+
+
+async function onChangeDestination(destination) {
+  this.setState({ destination });
+  const apiURL = `https://maps.googleapis.com/maps/api/place/autocomplete/json?key=AIzaSyBzhHVHHQwG_ILDoiTj2jp4UlxYW7p_NfM&input=${destination}&location=${this.state.latitude},${this.state.longitude}&radius=2000&types=establishment`;
+
+  try {
+    const result = await fetch(apiURL);
+    const json = await result.json();
+    // console.log(json);
+    this.setState({
+      predictions: json.predictions
+    });
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+
+
+
 export default function infoForm({ navigation }) {
   // console.log(navigation.getParam("description"));
 
   const request = new Request();
   request.restaurant_name = navigation.getParam("description");
+
+  //used for place details api
+  const place_id = navigation.getParam("place_id");
+  console.log(place_id)
+
+
+
+
+
+
+
 
   return (
     <View style={styles.container}>
@@ -111,3 +143,7 @@ const styles = StyleSheet.create({
     width: 200
   }
 });
+
+// infoForm.navigationOptions = {
+//   header: null
+// };
