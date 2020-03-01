@@ -62,8 +62,8 @@ export default function infoForm({ navigation }) {
           onPress={() => {
             sendRequest(request);
             navigation.push("Confirmed")
-            setTimeout(() => { navigation.pop(); }, 1750);
-            setTimeout(() => { navigation.push("ReservationScreen"); }, 1750);
+            setTimeout(() => { navigation.pop(); }, 1650);
+            setTimeout(() => { navigation.push("ReservationScreen"); }, 1650);
           }}
           title="send request"
           color="white"
