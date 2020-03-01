@@ -2,8 +2,8 @@ import * as React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
-import LinksScreen from '../screens/LinksScreen';
 import MapScreen from '../screens/MapScreen';
+import ReservationScreen from '../screens/ReservationScreen';
 
 const BottomTab = createBottomTabNavigator();
 const INITIAL_ROUTE_NAME = 'Home';
@@ -34,7 +34,7 @@ export default function BottomTabNavigator({ navigation, route }) {
       />
       <BottomTab.Screen
         name="Reservation"
-        component={LinksScreen}
+        component={ReservationScreen}
         options={{
           title: 'Reservation',
           tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="ios-cloud" />,
