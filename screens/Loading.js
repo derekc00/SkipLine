@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { Dimensions, StyleSheet, Text, View } from 'react-native';
+import * as React from "react";
+import { Dimensions, StyleSheet, Text, View } from "react-native";
 import LottieView from "lottie-react-native";
 
 export default class Loading extends React.Component {
@@ -18,21 +18,25 @@ export default class Loading extends React.Component {
   render() {
     return (
       <View style={styles.animationContainer}>
-        <LottieView
-          ref={animation => {
-            this.animation = animation;
-          }}
-          style={{
-            height: Math.round(Dimensions.get('window').height) / 4,
-            backgroundColor: '#FFF',
-          }}
-          source={require('../assets/loadingdots.json')}
-        />
+        <View>
+          <LottieView
+            ref={animation => {
+              this.animation = animation;
+            }}
+            style={{
+              height: Math.round(Dimensions.get("window").height) / 4,
+              backgroundColor: "#FFF"
+            }}
+            source={require("../assets/loadingdots.json")}
+          />
+        </View>
+        <View style={styles.findingLocation}>
+          <Text>Finding Location...</Text>
+        </View>
       </View>
     );
   }
 }
-
 
 Loading.navigationOptions = {
   header: null
@@ -40,12 +44,18 @@ Loading.navigationOptions = {
 
 const styles = StyleSheet.create({
   animationContainer: {
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-    flex: 1,
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
+    flex: 1
   },
   buttonContainer: {
-    paddingTop: 20,
+    paddingTop: 20
   },
+  findingLocation: {
+    position: "relative",
+    marginTop: -30,
+    fontFamily: "Montserrat",
+    fontSize: 100
+  }
 });
