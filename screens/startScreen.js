@@ -21,6 +21,7 @@ import AwesomeButtonRick from 'react-native-really-awesome-button/src/themes/ric
 export default function startScreen({ navigation }) {
     const request = new Request();
 
+
     //called when button is pressed
     const pressHandler = () => {
         //navigate to another screen
