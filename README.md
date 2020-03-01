@@ -17,6 +17,6 @@
 7. By now you should have our project in your hands!
 
 ## Contributors
-[Derek Chang](https://www.linkedin.com/in/derektchang/)
-David Lieu
-Ethan Song
+- [Derek Chang](https://www.linkedin.com/in/derektchang/)
+- David Lieu
+- Ethan Song
