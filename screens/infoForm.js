@@ -55,9 +55,9 @@ export default function infoForm() {
   );
 }
 
-infoForm.navigationOptions = {
-  header: null,
-};
+// infoForm.navigationOptions = {
+//   header: null,
+// };
 
 const styles = StyleSheet.create({
   container: {

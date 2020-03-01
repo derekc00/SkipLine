@@ -20,6 +20,7 @@ export default class MapScreen extends React.Component {
   constructor(props) {
     super(props);
 
+    this.props = props;
     this.state = {
       latitude: 0,
       longitude: 0,
@@ -68,6 +69,8 @@ export default class MapScreen extends React.Component {
 
   chooseDestination(destination) {
     console.log({destination})
+    //navigate to another screen
+    this.props.navigation.navigate("InfoForm");
   }
 
   render() {
@@ -150,6 +153,6 @@ const styles = StyleSheet.create({
   }
 });
 
-MapScreen.navigationOptions = {
-  header: null
-};
+// MapScreen.navigationOptions = {
+//   header: null
+// };
