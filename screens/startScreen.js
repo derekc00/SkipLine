@@ -1,14 +1,14 @@
 import * as React from "react";
 import {
-  Image,
-  Platform,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-  TextInput,
-  Alert,
-  Button
+    Image,
+    Platform,
+    StyleSheet,
+    Text,
+    TouchableOpacity,
+    View,
+    TextInput,
+    Alert,
+    Button
 } from "react-native";
 // import { ScrollView } from 'react-native-gesture-handler';
 // import * as WebBrowser from 'expo-web-browser';
@@ -19,15 +19,14 @@ import { sendRequest } from '../firebaseFunctions';
 import AwesomeButtonRick from 'react-native-really-awesome-button/src/themes/rick';
 
 export default function startScreen({ navigation }) {
-  const request = new Request();
-
+    const request = new Request();
 
     //called when button is pressed
-  const pressHandler = () => {
-    //navigate to another screen
-    navigation.push("MapScreen");
-  };
-    const request = new Request();
+    const pressHandler = () => {
+        //navigate to another screen
+        navigation.push("MapScreen");
+    };
+
     return (
         <View style={styles.container}>
             <View style={styles.b1}>
@@ -38,7 +37,7 @@ export default function startScreen({ navigation }) {
             </View>
 
             <View>
-                <AwesomeButtonRick onPress={pressHandler}
+                <AwesomeButtonRick
                     type="secondary"
                 > look for requests
                 </AwesomeButtonRick>
