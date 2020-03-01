@@ -60,8 +60,10 @@ export default function infoForm({ navigation }) {
       >
         <Button
           onPress={() => {
-            sendRequest(request);
-            Alert.alert("Request Sent!");
+            //sendRequest(request);
+            navigation.push("Confirmed")
+            setTimeout(() => { navigation.pop(); }, 1750);
+            setTimeout(() => { navigation.push("ReservationScreen"); }, 1750);
           }}
           title="send request"
           color="white"

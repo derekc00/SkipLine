@@ -5,6 +5,7 @@ import InfoForm from "../screens/infoForm";
 import Loading from "../screens/Loading";
 import ReservationScreen from "../screens/ReservationScreen";
 import StartScreen from "../screens/startScreen";
+import Confirmed from "../screens/Confirmed";
 
 const screens = {
   //setup params. call it whatever you want
@@ -18,8 +19,9 @@ const screens = {
   InfoForm: {
     screen: InfoForm
   },
-
-  
+  Confirmed: {
+    screen: Confirmed
+  },
   Loading: {
     screen: Loading
   },

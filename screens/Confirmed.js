@@ -2,10 +2,11 @@ import * as React from 'react';
 import { Dimensions, StyleSheet, Text, View } from 'react-native';
 import LottieView from "lottie-react-native";
 
-export default class Loading extends React.Component {
+export default class Confirmed extends React.Component {
+
   constructor(props) {
     super(props);
-    this.props.navigation.push("ReservationScreen");
+    this.props = props;
   }
   componentDidMount() {
     this.animation.play();
@@ -15,6 +16,7 @@ export default class Loading extends React.Component {
     this.animation.reset();
     this.animation.play();
   };
+
 
   render() {
     return (
@@ -27,7 +29,8 @@ export default class Loading extends React.Component {
             height: Math.round(Dimensions.get('window').height) / 10,
             backgroundColor: '#FFF',
           }}
-          source={require('../assets/loadingdots.json')}
+          source={require('../assets/success.json')}
+
         />
       </View>
     );
