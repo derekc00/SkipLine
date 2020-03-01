@@ -30,7 +30,7 @@ export default class MapScreen extends React.Component {
   componentDidMount() {
     navigator.geolocation.getCurrentPosition(
       position => {
-        console.log(position);
+        // console.log(position);
 
         this.setState(
           {
@@ -65,8 +65,16 @@ export default class MapScreen extends React.Component {
   }
 
   chooseDestination(destination) {
-    // console.log({destination})
+    console.log({ destination });
     //navigate to another screen
+
+    // destination.map(param, i) = () => {
+    // data = JSON.parse(destination);
+    // console.log(destination.getParam("structured_formatting"));
+    // }
+
+    // console.log({params.structured_formatting});
+
     this.props.navigation.navigate("InfoForm", destination);
   }
 
