@@ -1,5 +1,15 @@
-import * as React from 'react';
-import { Image, Platform, StyleSheet, Text, TouchableOpacity, View, TextInput, Alert, Button } from 'react-native';
+import * as React from "react";
+import {
+  Image,
+  Platform,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+  TextInput,
+  Alert,
+  Button
+} from "react-native";
 // import { ScrollView } from 'react-native-gesture-handler';
 // import * as WebBrowser from 'expo-web-browser';
 // import { MonoText } from '../components/StyledText';
@@ -8,24 +18,27 @@ import { Request } from '../consumerRequests';
 import { sendRequest } from '../firebaseFunctions';
 import AwesomeButtonRick from 'react-native-really-awesome-button/src/themes/rick';
 
+export default function startScreen({ navigation }) {
+  const request = new Request();
 
-export default function startScreen() {
 
+    //called when button is pressed
+  const pressHandler = () => {
+    //navigate to another screen
+    navigation.push("MapScreen");
+  };
     const request = new Request();
     return (
         <View style={styles.container}>
             <View style={styles.b1}>
-                <AwesomeButtonRick onPress={() => {
-
-                }}
+                <AwesomeButtonRick onPress={pressHandler}
                     type="primary"
                 > create request
                 </AwesomeButtonRick>
             </View>
 
             <View>
-                <AwesomeButtonRick onPress={() => {
-                }}
+                <AwesomeButtonRick onPress={pressHandler}
                     type="secondary"
                 > look for requests
                 </AwesomeButtonRick>
@@ -33,11 +46,15 @@ export default function startScreen() {
 
         </View>
     );
+
+
+
+
 }
 
-startScreen.navigationOptions = {
-    header: null,
-};
+// startScreen.navigationOptions = {
+//   header: null
+// };
 
 const styles = StyleSheet.create({
     container: {
