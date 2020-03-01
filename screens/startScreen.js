@@ -28,6 +28,10 @@ export default function startScreen({ navigation }) {
         navigation.push("MapScreen");
     };
 
+    const pressHandler2 = () => {
+        navigation.push("Requests");
+    };
+
     return (
         <View style={styles.container}>
             <View style={styles.b1}>
@@ -38,7 +42,7 @@ export default function startScreen({ navigation }) {
             </View>
 
             <View>
-                <AwesomeButtonRick
+                <AwesomeButtonRick onPress={pressHandler2}
                     type="secondary"
                 > look for requests
                 </AwesomeButtonRick>
