@@ -4,6 +4,8 @@ require_relative '../node_modules/react-native-unimodules/cocoapods'
 
 target 'skipLine' do
 
+  pod 'Firebase/Core', '~> 6.13.0'
+
   rnPrefix = "../node_modules/react-native"
   
   # React Native and its dependencies
