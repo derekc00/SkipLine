@@ -47,7 +47,7 @@ export default function startScreen() {
     );
 }
 
-HomeScreen.navigationOptions = {
+startScreen.navigationOptions = {
     header: null,
 };
 
