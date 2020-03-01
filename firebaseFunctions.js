@@ -18,7 +18,7 @@ export function sendRequest(request, addComplete) {
 
     dbh.collection("requests").add({
         userID: request.name,
-        partySize: request.partySize,
+        partySize: request.party_size,
         price: request.price,
         createdAt: firebase.firestore.FieldValue.serverTimestamp()
     }).then((data) => addComplete(data))
