@@ -10,7 +10,7 @@ import {
 } from "react-native";
 import { ScrollView, TextInput } from "react-native-gesture-handler";
 import MapView, { PROVIDER_GOOGLE, Marker } from "react-native-maps";
-import LoadingScreen from '../screens/Loading'
+import LoadingScreen from "../screens/Loading";
 import { Dimensions } from "react-native";
 
 export default class MapScreen extends React.Component {
@@ -30,7 +30,7 @@ export default class MapScreen extends React.Component {
   componentDidMount() {
     navigator.geolocation.getCurrentPosition(
       position => {
-        console.log(position);
+        // console.log(position);
 
         this.setState(
           {
@@ -38,7 +38,7 @@ export default class MapScreen extends React.Component {
             longitude: position.coords.longitude,
             error: null
           },
-          function () {
+          function() {
             console.log("setState completesd", this.state);
           }
         );
@@ -65,23 +65,33 @@ export default class MapScreen extends React.Component {
   }
 
   chooseDestination(destination) {
-    // console.log({destination})
+    console.log({ destination });
     //navigate to another screen
+
+    // destination.map(param, i) = () => {
+    // data = JSON.parse(destination);
+    // console.log(destination.getParam("structured_formatting"));
+    // }
+
+    // console.log({params.structured_formatting});
+
     this.props.navigation.navigate("InfoForm", destination);
   }
 
   render() {
     const predictions = this.state.predictions.map(prediction => (
-      <Text style={styles.suggestions} key={prediction.id} onPress={() => this.chooseDestination(prediction)}>
+      <Text
+        style={styles.suggestions}
+        key={prediction.id}
+        onPress={() => this.chooseDestination(prediction)}
+      >
         {prediction.description}
       </Text>
     ));
-    
-    if (this.state.latitude == 0){
-      return (
-        <LoadingScreen/>
-      );
-    }else{
+
+    if (this.state.latitude == 0) {
+      return <LoadingScreen />;
+    } else {
       return (
         <View style={styles.container}>
           <View style={styles.mapContainer}>
@@ -105,19 +115,20 @@ export default class MapScreen extends React.Component {
               placeholder="Enter destination..."
               style={styles.destinationInput}
               value={this.state.destination}
-              onChangeText={destination => this.onChangeDestination(destination)}
+              onChangeText={destination =>
+                this.onChangeDestination(destination)
+              }
             />
             {predictions}
           </View>
         </View>
       );
     }
-    
   }
 }
 
 MapScreen.navigationOptions = {
-  title: 'Map',
+  header: null
 };
 
 const windowWidth = Dimensions.get("window").width;

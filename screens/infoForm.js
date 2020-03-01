@@ -18,8 +18,6 @@ import { MonoText } from "../components/StyledText";
 import { Request } from "../consumerRequests";
 import { sendRequest } from "../firebaseFunctions";
 
-
-
 async function onChangeDestination(destination) {
   this.setState({ destination });
   const apiURL = `https://maps.googleapis.com/maps/api/place/autocomplete/json?key=AIzaSyBzhHVHHQwG_ILDoiTj2jp4UlxYW7p_NfM&input=${destination}&location=${this.state.latitude},${this.state.longitude}&radius=2000&types=establishment`;
@@ -36,29 +34,23 @@ async function onChangeDestination(destination) {
   }
 }
 
-
-
-
 export default function infoForm({ navigation }) {
   // console.log(navigation.getParam("description"));
 
   const request = new Request();
+  // data = navigation.getParam("structured_formatting");
+  // var data = JSON.parse(navigation.getParam("structured_formatting"));
+  // console.log(strin);
   request.restaurant_name = navigation.getParam("description");
 
   //used for place details api
   const place_id = navigation.getParam("place_id");
-  console.log(place_id)
-
-
-
-
-
-
-
+  console.log(place_id);
 
   return (
     <View style={styles.container}>
-      <Text style={styles.location}>{navigation.getParam("description")}</Text>
+      <Text style={styles.text}>{navigation.getParam("description")}</Text>
+
 
       <Text>Enter name:</Text>
       <TextInput
@@ -95,20 +87,26 @@ export default function infoForm({ navigation }) {
             sendRequest(request);
             // setTimeout(() => { navigation.push("ReservationScreen", request); }, 1650);
             // setTimeout(() => { navigation.navigate("ReservationScreen", { location: request.restaurant_name, status: request.status, total: request.price }); }, 1650);
-            navigation.navigate("ReservationScreen", { location: request.restaurant_name, status: request.status, total: request.price });
+            navigation.navigate("ReservationScreen", {
+              location: request.restaurant_name,
+              status: request.status,
+              total: request.price
+            });
             navigation.push("Confirmed");
-            setTimeout(() => { navigation.pop(); }, 1650);
+            setTimeout(() => {
+              navigation.pop();
+            }, 1650);
           }}
           title="send request"
           color="white"
         ></Button>
       </View>
-    </View >
+    </View>
   );
 }
 
 infoForm.navigationOptions = {
-  title: 'Information',
+  title: "Information"
 };
 
 const styles = StyleSheet.create({
@@ -117,6 +115,10 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "flex-start"
+  },
+  text: {
+    marginTop: 30
+
   },
   inputName: {
     borderWidth: 1,
