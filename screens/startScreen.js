@@ -1,5 +1,6 @@
 import * as React from "react";
 import {
+    ImageBackground,
     Dimensions,
     Image,
     Platform,
@@ -36,23 +37,19 @@ export default function startScreen({ navigation }) {
     };
 
     return (
-        <View style={styles.container}>
-            <Image source={require("../assets/images/icon.png")} style={styles.imageSize}></Image>
+        <ImageBackground source={require("../assets/images/menu.png")} style={styles.imageSize, styles.container}>
             <View style={styles.b1}>
                 <AwesomeButtonRick onPress={pressHandler}
                     type="primary"
                 > create request
                 </AwesomeButtonRick>
-            </View>
-
-            <View>
+            </View><View>
                 <AwesomeButtonRick onPress={pressHandler2}
                     type="secondary"
                 > look for requests
                 </AwesomeButtonRick>
-            </View>
-
-        </View >
+            </View >
+        </ImageBackground >
     );
 
 
@@ -72,10 +69,11 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     b1: {
-        padding: 15
+        marginTop: Math.round(Dimensions.get('window').height) / 3,
+        padding: 25
     },
     imageSize: {
-        height: Math.round(Dimensions.get('window').height) / 3,
-        width: Math.round(Dimensions.get('window').height) / 3,
+        height: Math.round(Dimensions.get('window').height),
+        width: Math.round(Dimensions.get('window').width),
     },
 });

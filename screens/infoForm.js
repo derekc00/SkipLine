@@ -58,7 +58,7 @@ export default function infoForm({ navigation }) {
 
   return (
     <View style={styles.container}>
-      <Text>{navigation.getParam("description")}</Text>
+      <Text style={styles.location}>{navigation.getParam("description")}</Text>
 
       <Text>Enter name:</Text>
       <TextInput
@@ -88,9 +88,6 @@ export default function infoForm({ navigation }) {
           backgroundColor: "green",
           padding: 3,
           borderRadius: 16,
-          shadowOpacity: 0.5,
-          alignItems: "baseline",
-          justifyContent: "flex-end"
         }}
       >
         <Button
@@ -119,7 +116,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
     alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "flex-start"
   },
   inputName: {
     borderWidth: 1,
@@ -141,6 +138,9 @@ const styles = StyleSheet.create({
     padding: 8,
     margin: 10,
     width: 200
+  },
+  location: {
+    marginBottom: 50,
   }
 });
 
