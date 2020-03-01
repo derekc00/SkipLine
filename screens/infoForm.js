@@ -64,10 +64,11 @@ export default function infoForm({ navigation }) {
         <Button
           onPress={() => {
             sendRequest(request);
-            navigation.push("Confirmed")
-            setTimeout(() => { navigation.pop(); }, 1650);
             // setTimeout(() => { navigation.push("ReservationScreen", request); }, 1650);
-            setTimeout(() => { navigation.navigate("ReservationScreen", { location: request.restaurant_name, status: request.status, total: request.price }); }, 1650);
+            // setTimeout(() => { navigation.navigate("ReservationScreen", { location: request.restaurant_name, status: request.status, total: request.price }); }, 1650);
+            navigation.navigate("ReservationScreen", { location: request.restaurant_name, status: request.status, total: request.price });
+            navigation.push("Confirmed");
+            setTimeout(() => { navigation.pop(); }, 1650);
           }}
           title="send request"
           color="white"
@@ -77,9 +78,9 @@ export default function infoForm({ navigation }) {
   );
 }
 
-// infoForm.navigationOptions = {
-//   header: null,
-// };
+infoForm.navigationOptions = {
+  title: 'Information',
+};
 
 const styles = StyleSheet.create({
   container: {

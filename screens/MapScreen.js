@@ -38,7 +38,7 @@ export default class MapScreen extends React.Component {
             longitude: position.coords.longitude,
             error: null
           },
-          function() {
+          function () {
             console.log("setState completesd", this.state);
           }
         );
@@ -108,6 +108,11 @@ export default class MapScreen extends React.Component {
     );
   }
 }
+
+MapScreen.navigationOptions = {
+  title: 'Map',
+};
+
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
 

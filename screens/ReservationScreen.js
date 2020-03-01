@@ -24,7 +24,7 @@ export default function ReservationScreen({ navigation }) {
 
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer} refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}>
+      <ScrollView style={styles.container} refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}>
         <Image source={{ uri: "https://images-prod.healthline.com/hlcmsresource/images/AN_images/healthy-eating-ingredients-1296x728-header.jpg" }} style={styles.imageSize}></Image>
         <Text style={styles.optionText, styles.option}>
           {'Location: ' + navigation.getParam('location')}
@@ -72,6 +72,10 @@ function OptionButton({ icon, label, onPress, c, isLastOption }) {
   );
 }
 
+ReservationScreen.navigationOptions = {
+  headerLeft: null,
+  title: 'Your Reservation',
+};
 const styles = StyleSheet.create({
   container: {
     flex: 1,
