@@ -9,6 +9,10 @@ import { createStackNavigator } from '@react-navigation/stack';
 import BottomTabNavigator from './navigation/BottomTabNavigator';
 import useLinking from './navigation/useLinking';
 
+import {decode, encode} from 'base-64'
+if (!global.btoa) {  global.btoa = encode }
+if (!global.atob) { global.atob = decode }
+
 const Stack = createStackNavigator();
 
 export default function App(props) {
@@ -16,6 +20,8 @@ export default function App(props) {
   const [initialNavigationState, setInitialNavigationState] = React.useState();
   const containerRef = React.useRef();
   const { getInitialState } = useLinking(containerRef);
+
+
 
   // Load any resources or data that we need prior to rendering the app
   React.useEffect(() => {
