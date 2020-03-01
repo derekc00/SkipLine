@@ -67,6 +67,10 @@ export default class MapScreen extends React.Component {
   }
 
   render() {
+    const predictions = this.state.predictions.map(prediction => (
+      <Text style={styles.suggestions} key={prediction.id}>{prediction.description}</Text>
+    ));
+
     return (
       <View style={styles.container}>
         <View style={styles.mapContainer}>
@@ -92,6 +96,7 @@ export default class MapScreen extends React.Component {
             value={this.state.destination}
             onChangeText={destination => this.onChangeDestination(destination)}
           />
+          {predictions}
         </View>
       </View>
     );
@@ -128,6 +133,14 @@ const styles = StyleSheet.create({
     marginRight: 5,
     padding: 5,
     backgroundColor: "white"
+  },
+  suggestions: {
+    backgroundColor: "white",
+    padding: 5,
+    fontSize: 20,
+    borderWidth: 0.2,
+    marginLeft: 5,
+    marginRight: 5
   }
 });
 
