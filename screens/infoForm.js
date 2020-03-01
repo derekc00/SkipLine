@@ -37,7 +37,7 @@ export default function infoForm({ navigation }) {
         keyboardType="numeric"
         style={styles.inputPartySize}
         placeholder="e.g. 1"
-        onChangeText={partySize => (request.partySize = partySize)}
+        onChangeText={partySize => (request.party_size = partySize)}
       />
 
       <Text>Enter bounty:</Text>
