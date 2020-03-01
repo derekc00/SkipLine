@@ -5,7 +5,6 @@ import LottieView from "lottie-react-native";
 export default class Loading extends React.Component {
   constructor(props) {
     super(props);
-    this.props.navigation.push("ReservationScreen");
   }
   componentDidMount() {
     this.animation.play();

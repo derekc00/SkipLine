@@ -25,7 +25,9 @@ export default function startScreen({ navigation }) {
     //called when button is pressed
     const pressHandler = () => {
         //navigate to another screen
-        navigation.push("MapScreen");
+        navigation.push("Loading");
+        setTimeout(() => { navigation.pop(); }, 2000);
+        setTimeout(() => { navigation.push("MapScreen"); }, 2000);
     };
 
     const pressHandler2 = () => {
