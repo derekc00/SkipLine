@@ -65,7 +65,7 @@ export default function infoForm({ navigation }) {
           onPress={() => {
             sendRequest(request);
             navigation.push("Confirmed")
-            setTimeout(() => { navigation.pop(); }, 1650);
+            // setTimeout(() => { navigation.pop(); }, 1650);
             // setTimeout(() => { navigation.push("ReservationScreen", request); }, 1650);
             setTimeout(() => { navigation.navigate("ReservationScreen", { location: request.restaurant_name, status: request.status, total: request.price }); }, 1650);
           }}
@@ -110,3 +110,7 @@ const styles = StyleSheet.create({
     width: 200
   }
 });
+
+// infoForm.navigationOptions = {
+//   header: null
+// };
