@@ -9,9 +9,9 @@ export default function(containerRef) {
         path: 'root',
         screens: {
           Home: 'home',
-          Links: 'links',
+          Reservation: 'Reservation',
           Maps: 'Map',
-          Settings: 'settings',
+          Loading: 'loading',
         },
       },
     },

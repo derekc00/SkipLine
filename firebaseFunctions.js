@@ -3,19 +3,9 @@ import { Request } from './consumerRequests';
 import * as firebase from 'firebase';
 import '@firebase/firestore';
 
-/*
-firebase.auth()
-  .signInAnonymously()
-  .then(credential => {
-    if (credential) {
-      console.log('default app user ->', credential.user.toJSON());
-    }
-  });
-*/
-
-
-
 export function sendRequest(request, addComplete){
+    console.log("a");
+
     const firebaseConfig = { 
         apiKey: "AIzaSyAkia1lQi1pkrLZS0YTBXuZW5LMCGGPjyI",
         authDomain: "skipline-5cd96.firebaseapp.com",
@@ -25,20 +15,28 @@ export function sendRequest(request, addComplete){
 
     if (!firebase.apps.length) {firebase.initializeApp(firebaseConfig)};
 
-    firebase.firestore()
-    .collection("request")
-    .add({
-        // userID:                 request.name,
-        // restaurantCoordinates:  request.restaurant_name,
-        // address:                request.address,
-        // partySize:              request.partySize,
-        // price:                  request.price,
-        // restaurant_name:        request.restaurant_name,
-        // status:                 request.status,
-        userID: "test",
-        createdAt:              firebase.firestore.FieldValue.serverTimestamp()
-    }).then((data) => addComplete(data))
-    .catch((error) => console.log(error))
+    const dbh = firebase.firestore();
+
+    dbh.collection("characters").add({
+        employment: "plumber",
+        outfitColor: "red",
+        specialAttack: "fireball"
+    })
+
+    // firebase.firestore()
+    // .collection("request")
+    // .add({
+    //     // userID:                 request.name,
+    //     // restaurantCoordinates:  request.restaurant_name,
+    //     // address:                request.address,
+    //     // partySize:              request.partySize,
+    //     // price:                  request.price,
+    //     // restaurant_name:        request.restaurant_name,
+    //     // status:                 request.status,
+    //     userID: "test",
+    //     createdAt:              firebase.firestore.FieldValue.serverTimestamp()
+    // }).then((data) => addComplete(data))
+    // .catch((error) => console.log(error))
 }
 
 /*

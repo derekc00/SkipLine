@@ -2,8 +2,9 @@ import * as React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
-import LinksScreen from '../screens/LinksScreen';
 import MapScreen from '../screens/MapScreen';
+import ReservationScreen from '../screens/ReservationScreen';
+import Loading from '../screens/Loading';
 
 const BottomTab = createBottomTabNavigator();
 const INITIAL_ROUTE_NAME = 'Home';
@@ -28,20 +29,26 @@ export default function BottomTabNavigator({ navigation, route }) {
         name="Home"
         component={HomeScreen}
         options={{
-          title: 'Get ddff',
-          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-code-working" />,
+          title: 'getInfo',
+          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-copy" />,
         }}
       />
       <BottomTab.Screen
-        name="Links"
-        component={LinksScreen}
+        name="Reservation"
+        component={ReservationScreen}
         options={{
-          title: 'Resources',
-          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="ios-cloud" />,
+          title: 'Reservation',
+          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-information-circle-outline" />,
         }}
       />
-      
-      
+      <BottomTab.Screen
+        name="Loading"
+        component={Loading}
+        options={{
+          title: 'Loading',
+          tabBarIcon: ({focused}) => <TabBarIcon focused={focused} name="md-refresh"/>,
+        }}
+      />
     </BottomTab.Navigator>
   );
 }
@@ -51,10 +58,12 @@ function getHeaderTitle(route) {
 
   switch (routeName) {
     case 'Home':
-      return 'How to get started';
-    case 'Links':
-      return 'Links to learn more';
+      return 'Request Form';  
+    case 'Reservation':
+      return 'Reservation Status';
     case 'Map':
       return 'This is the map';
+    case 'Loading':
+      return 'Loading';
   }
 }

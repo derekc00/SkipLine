@@ -41,8 +41,9 @@ export default function HomeScreen() {
                       justifyContent: 'flex-end'
                       }}>
         <Button onPress={() => {
-          Alert.alert("Request Sent!")
           sendRequest(request)
+          console.log("button pressed")
+          Alert.alert("Request Sent!")
         }}
         title="send request"
         color='white'
