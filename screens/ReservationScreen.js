@@ -1,12 +1,17 @@
 import * as React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Dimensions,Image, StyleSheet, Text, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import * as WebBrowser from 'expo-web-browser';
 import { RectButton, ScrollView } from 'react-native-gesture-handler';
 
 export default function ReservationScreen() {
+
   return (
     <View style={styles.container} contentContainerStyle={styles.contentContainer}>
+      <Image source = {{uri :"https://images-prod.healthline.com/hlcmsresource/images/AN_images/healthy-eating-ingredients-1296x728-header.jpg"}} style = {styles.imageSize}></Image>
+      <Text style={styles.optionText, styles.option}>
+        {'Total: $ '}
+      </Text>
       <OptionButton
         icon="md-remove-circle"
         label="Cancel"
@@ -66,5 +71,9 @@ const styles = StyleSheet.create({
     fontSize: 15,
     alignSelf: 'flex-start',
     marginTop: 1,
+  },
+  imageSize: {
+    width: Math.round(Dimensions.get('window').width),
+    height: Math.round(Dimensions.get('window').height)/4,
   },
 });
