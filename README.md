@@ -1,7 +1,8 @@
 # SkipLine
 
 ## [Devpost](https://devpost.com/software/skipline-th2apz)
-
+- Slohacks 2020
+- March 1, 2020
 
 ## How To Use
 
@@ -14,3 +15,8 @@
 5. If you want to run on your iPhone, download the "Expo" App on the App Store
 6. Scan the barcode provided
 7. By now you should have our project in your hands!
+
+## Contributors
+[Derek Chang](https://www.linkedin.com/in/derektchang/)
+David Lieu
+Ethan Song
