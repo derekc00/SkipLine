@@ -6,43 +6,31 @@ import { Image, Platform, StyleSheet, Text, TouchableOpacity, View, TextInput, A
 
 import { Request } from '../consumerRequests';
 import { sendRequest } from '../firebaseFunctions';
+import AwesomeButtonRick from 'react-native-really-awesome-button/src/themes/rick';
+
 
 export default function startScreen() {
 
     const request = new Request();
     return (
         <View style={styles.container}>
-            <View style={{
-                backgroundColor: 'green',
-                padding: 3,
-                borderRadius: 16,
-                shadowOpacity: 0.5,
-                alignItems: 'baseline',
-                justifyContent: 'flex-end'
-            }}>
-                <Button onPress={() => {
+            <View style={styles.b1}>
+                <AwesomeButtonRick onPress={() => {
 
                 }}
-                    title="create request"
-                    color='white'
-                >
-                </Button>
+                    type="primary"
+                > create request
+                </AwesomeButtonRick>
             </View>
-            <View style={{
-                backgroundColor: 'green',
-                padding: 3,
-                borderRadius: 16,
-                shadowOpacity: 0.5,
-                alignItems: 'baseline',
-                justifyContent: 'flex-end'
-            }}>
-                <Button onPress={() => {
+
+            <View>
+                <AwesomeButtonRick onPress={() => {
                 }}
-                    title="look for requests"
-                    color='white'
-                >
-                </Button>
+                    type="secondary"
+                > look for requests
+                </AwesomeButtonRick>
             </View>
+
         </View>
     );
 }
@@ -58,4 +46,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
+    b1: {
+        padding: 15
+    }
 });
