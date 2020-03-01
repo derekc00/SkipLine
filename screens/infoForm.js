@@ -8,7 +8,7 @@ import { MonoText } from '../components/StyledText';
 import { Request } from '../consumerRequests';
 import { sendRequest } from '../firebaseFunctions';
 
-export default function HomeScreen() {
+export default function infoForm() {
 
   const request = new Request();
   return (
@@ -55,7 +55,7 @@ export default function HomeScreen() {
   );
 }
 
-HomeScreen.navigationOptions = {
+infoForm.navigationOptions = {
   header: null,
 };
 
