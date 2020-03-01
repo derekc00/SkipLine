@@ -6,35 +6,31 @@ import { RectButton, ScrollView } from 'react-native-gesture-handler';
 
 export default function ReservationScreen() {
   return (
-    <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
+    <View style={styles.container} contentContainerStyle={styles.contentContainer}>
       <OptionButton
-        icon="md-school"
-        label="Read the Expo documentation"
-        onPress={() => WebBrowser.openBrowserAsync('https://docs.expo.io')}
-      />
-
-      <OptionButton
-        icon="md-compass"
-        label="Read the React Navigation documentation"
+        icon="md-remove-circle"
+        label="Cancel"
         onPress={() => WebBrowser.openBrowserAsync('https://reactnavigation.org')}
+        c = "rgba(128,0,0,1)"
       />
 
       <OptionButton
-        icon="ios-chatboxes"
-        label="Ask a question on the forums"
+        icon="md-thumbs-up"
+        label="Confirm"
         onPress={() => WebBrowser.openBrowserAsync('https://forums.expo.io')}
+        c = "rgba(0,128,0,1)"
         isLastOption
       />
-    </ScrollView>
+    </View>
   );
 }
 
-function OptionButton({ icon, label, onPress, isLastOption }) {
+function OptionButton({ icon, label, onPress, c, isLastOption }) {
   return (
     <RectButton style={[styles.option, isLastOption && styles.lastOption]} onPress={onPress}>
       <View style={{ flexDirection: 'row' }}>
         <View style={styles.optionIconContainer}>
-          <Ionicons name={icon} size={22} color="rgba(0,0,0,0.35)" />
+          <Ionicons name={icon} size={22} color={c} />
         </View>
         <View style={styles.optionTextContainer}>
           <Text style={styles.optionText}>{label}</Text>
