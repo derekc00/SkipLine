@@ -10,7 +10,7 @@ import {
 } from "react-native";
 import { ScrollView, TextInput } from "react-native-gesture-handler";
 import MapView, { PROVIDER_GOOGLE, Marker } from "react-native-maps";
-
+import LoadingScreen from '../screens/Loading'
 import { Dimensions } from "react-native";
 
 export default class MapScreen extends React.Component {
@@ -76,36 +76,43 @@ export default class MapScreen extends React.Component {
         {prediction.description}
       </Text>
     ));
-
-    return (
-      <View style={styles.container}>
-        <View style={styles.mapContainer}>
-          <MapView
-            provider={PROVIDER_GOOGLE}
-            style={{
-              flex: 1
-            }}
-            region={{
-              latitude: this.state.latitude,
-              longitude: this.state.longitude,
-              latitudeDelta: 0.2,
-              longitudeDelta: 0.2
-            }}
-            showsUserLocation={true}
-          />
+    
+    if (this.state.latitude == 0){
+      return (
+        <LoadingScreen/>
+      );
+    }else{
+      return (
+        <View style={styles.container}>
+          <View style={styles.mapContainer}>
+            <MapView
+              provider={PROVIDER_GOOGLE}
+              style={{
+                flex: 1
+              }}
+              region={{
+                latitude: this.state.latitude,
+                longitude: this.state.longitude,
+                latitudeDelta: 0.2,
+                longitudeDelta: 0.2
+              }}
+              showsUserLocation={true}
+            />
+          </View>
+          <View style={styles.searchContainer}>
+            {/* <MySearchBar/> */}
+            <TextInput
+              placeholder="Enter destination..."
+              style={styles.destinationInput}
+              value={this.state.destination}
+              onChangeText={destination => this.onChangeDestination(destination)}
+            />
+            {predictions}
+          </View>
         </View>
-        <View style={styles.searchContainer}>
-          {/* <MySearchBar/> */}
-          <TextInput
-            placeholder="Enter destination..."
-            style={styles.destinationInput}
-            value={this.state.destination}
-            onChangeText={destination => this.onChangeDestination(destination)}
-          />
-          {predictions}
-        </View>
-      </View>
-    );
+      );
+    }
+    
   }
 }
 
