@@ -18,7 +18,7 @@ class Request {
         this.name;
     }
 
-    set location(latitutde, longitude){
+    set location(latitude, longitude){
         this.location = [latitude, longitude];
     }
 
