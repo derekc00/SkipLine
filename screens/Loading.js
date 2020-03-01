@@ -5,6 +5,9 @@ import LottieView from "lottie-react-native";
 export default class Loading extends React.Component {
   constructor(props) {
     super(props);
+    this.navigationOptions = {
+      header: null
+    };
   }
   componentDidMount() {
     this.animation.play();
@@ -32,6 +35,7 @@ export default class Loading extends React.Component {
     );
   }
 }
+
 
 const styles = StyleSheet.create({
   animationContainer: {
