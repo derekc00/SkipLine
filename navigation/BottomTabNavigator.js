@@ -4,6 +4,7 @@ import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import MapScreen from '../screens/MapScreen';
 import ReservationScreen from '../screens/ReservationScreen';
+import Loading from '../screens/Loading';
 
 const BottomTab = createBottomTabNavigator();
 const INITIAL_ROUTE_NAME = 'Home';
@@ -40,8 +41,14 @@ export default function BottomTabNavigator({ navigation, route }) {
           tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-information-circle-outline" />,
         }}
       />
-      
-      
+      <BottomTab.Screen
+        name="Loading"
+        component={Loading}
+        options={{
+          title: 'Loading',
+          tabBarIcon: ({focused}) => <TabBarIcon focused={focused} name="md-refresh"/>,
+        }}
+      />
     </BottomTab.Navigator>
   );
 }
@@ -56,5 +63,7 @@ function getHeaderTitle(route) {
       return 'Reservation Status';
     case 'Map':
       return 'This is the map';
+    case 'Loading':
+      return 'Loading';
   }
 }

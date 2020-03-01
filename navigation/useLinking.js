@@ -11,7 +11,7 @@ export default function(containerRef) {
           Home: 'home',
           Reservation: 'Reservation',
           Maps: 'Map',
-          Settings: 'settings',
+          Loading: 'loading',
         },
       },
     },
