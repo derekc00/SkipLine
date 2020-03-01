@@ -2,14 +2,18 @@
   "expo": {
     "name": "SkipLine",
     "slug": "SkipLine",
-    "icon": "./assets/images/icon.png",
+    "icon": "skipline invert.png",
     "privacy": "public",
     "sdkVersion": "36.0.0",
     "ios": {
-      "supportsTablet": true
+        "bundleIdentifier": "com.SkipLine",
+        "config": {
+          "googleMapsApiKey":  "AIzaSyDV3-hWc3lV8ZHwpKnwKoEpgJGX_hgNSTk"
+        }
+        
     },
     "android": {
-      "package": "com.SkipLine"
+        "package": "com.SkipLine"
     },
     "platforms": [
       "ios",
@@ -18,6 +22,7 @@
     ],
     "version": "1.0.0",
     "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
     "scheme": "myapp",
     "splash": {
       "image": "./assets/images/splash.png",
@@ -30,8 +35,8 @@
     "assetBundlePatterns": [
       "**/*"
     ],
-    "entryPoint": "node_modules/expo/AppEntry.js"
-  },
-  "displayName": "skipLine",
-  "name": "skipLine"
+    "ios": {
+      "supportsTablet": true
+    }
+  }
 }
