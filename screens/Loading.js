@@ -23,7 +23,7 @@ export default class Loading extends React.Component {
             this.animation = animation;
           }}
           style={{
-            height: Math.round(Dimensions.get('window').height) / 10,
+            height: Math.round(Dimensions.get('window').height) / 5,
             backgroundColor: '#FFF',
           }}
           source={require('../assets/loadingdots.json')}
