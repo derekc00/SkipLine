@@ -11,12 +11,11 @@ firebase.auth()
   });
 */
 
-// racism Derekkkk
-
 
 export function sendRequest(request, addComplete){
     firebase.firestore()
     .collection('Requests')
+    .collection(request.name)
     .add({
         userID:                 request.name,
         restaurantCoordinates:  request.restaurant_name,
