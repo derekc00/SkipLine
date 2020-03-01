@@ -18,8 +18,8 @@ class Request {
         this.name;
     }
 
-    set location(latitude, longitude){
-        this.location = [latitude, longitude];
+    set location(coords){
+        this.location = [coords[0], coords[1]];
     }
 
     get location(){
