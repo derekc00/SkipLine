@@ -1,12 +1,18 @@
 import * as React from 'react';
 import { Image, Platform, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { SearchBar } from 'react-native-elements';
-
+import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
+import { TextInput } from 'react-native-gesture-handler';
 
 export default class MySearchBar extends React.Component {
+  
+  
+  
   state = {
     search: '',
   };
+
+  
 
   updateSearch = search => {
     this.setState({ search });
@@ -14,7 +20,6 @@ export default class MySearchBar extends React.Component {
 
   render() {
     const { search } = this.state;
-
     return (
         <View>
             <SearchBar  
@@ -23,31 +28,11 @@ export default class MySearchBar extends React.Component {
             value={search}
             lightTheme = {true}
             />
-            <GooglePlacesAutocomplete
-              placeholder='Enter Location'
-              minLength={2}
-              autoFocus={false}
-              returnKeyType={'default'}
-              fetchDetails={true}
-              styles={{
-                textInputContainer: {
-                  backgroundColor: 'rgba(0,0,0,0)',
-                  borderTopWidth: 0,
-                  borderBottomWidth:0
-                },
-                textInput: {
-                  marginLeft: 0,
-                  marginRight: 0,
-                  height: 38,
-                  color: '#5d5d5d',
-                  fontSize: 16
-                },
-                predefinedPlacesDescription: {
-                  color: '#1faadb'
-                },
-              }}
-              currentLocation={false}
-            />
+            {/* <TextInput>
+                placeholder="Enter destination..."
+                value=
+            </TextInput> */}
+
         </View>
       
     );
@@ -80,3 +65,8 @@ const styles = StyleSheet.create({
       
     }
   });
+  const homePlace = { description: 'Home', geometry: { location: { lat: 48.8152937, lng: 2.4597668 } }};
+  const workPlace = { description: 'Work', geometry: { location: { lat: 48.8496818, lng: 2.2940881 } }};
+  const GooglePlacesInput = () => {
+   
+  }
