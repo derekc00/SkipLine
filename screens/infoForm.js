@@ -117,7 +117,14 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start"
   },
   text: {
-    marginTop: 30
+    marginTop: 30,
+    marginBottom: 15,
+    padding: 15,
+    paddingLeft: 5,
+    paddingRight: 5,
+    textAlign: "center",
+    fontWeight: "bold"
+
 
   },
   inputName: {

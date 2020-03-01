@@ -152,7 +152,7 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     width: windowWidth,
-    height: 40
+    height: 55
   },
   destinationInput: {
     height: 50,
@@ -165,8 +165,8 @@ const styles = StyleSheet.create({
   },
   suggestions: {
     backgroundColor: "white",
-    padding: 5,
-    fontSize: 20,
+    padding: 10,
+    fontSize: 16,
     borderWidth: 0.2,
     marginLeft: 5,
     marginRight: 5

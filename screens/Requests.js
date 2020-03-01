@@ -33,7 +33,7 @@ export default class Requests extends Component {
                     renderItem={({ item }) => (
                         <OptionButton
                             icon="ios-cash"
-                            label={item.userID}
+                            label={`${item.userID} - $${item.price}`}
                             onPress={() => WebBrowser.openBrowserAsync('https://reactnavigation.org')}
                             c="rgba(0,0,0,1)"
                         />
