@@ -19,8 +19,11 @@ import { Request } from "../consumerRequests";
 import { sendRequest } from "../firebaseFunctions";
 
 export default function infoForm({ navigation }) {
+  // console.log(navigation.getParam("description"));
+
   const request = new Request();
-  console.log(navigation.getParam("description"));
+  request.restaurant_name = navigation.getParam("description");
+
   return (
     <View style={styles.container}>
       <Text>{navigation.getParam("description")}</Text>

@@ -20,24 +20,11 @@ export function sendRequest(request, addComplete) {
         userID: request.name,
         partySize: request.party_size,
         price: request.price,
+        restaurant_name: request.restaurant_name,
+        status: request.status,
         createdAt: firebase.firestore.FieldValue.serverTimestamp()
     }).then((data) => addComplete(data))
         .catch((error) => console.log(error))
-
-    // firebase.firestore()
-    // .collection("request")
-    // .add({
-    //     // userID:                 request.name,
-    //     // restaurantCoordinates:  request.restaurant_name,
-    //     // address:                request.address,
-    //     // partySize:              request.partySize,
-    //     // price:                  request.price,
-    //     // restaurant_name:        request.restaurant_name,
-    //     // status:                 request.status,
-    //     userID: "test",
-    //     createdAt:              firebase.firestore.FieldValue.serverTimestamp()
-    // }).then((data) => addComplete(data))
-    // .catch((error) => console.log(error))
 }
 
 /*
