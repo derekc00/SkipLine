@@ -27,20 +27,31 @@ export function sendRequest(request, addComplete) {
         .catch((error) => console.log(error))
 }
 
-/*
-export async function getRequests(requests){
+
+export async function getRequests(requestsReceived) {
+    const firebaseConfig = {
+        apiKey: "AIzaSyAkia1lQi1pkrLZS0YTBXuZW5LMCGGPjyI",
+        authDomain: "skipline-5cd96.firebaseapp.com",
+        databaseURL: "https://skipline-5cd96.firebaseio.com",
+        projectId: "skipline-5cd96",
+    }
+
+    if (!firebase.apps.length) { firebase.initializeApp(firebaseConfig) };
+
+    const dbh = firebase.firestore();
 
     var requestList = [];
 
-    var snapshot = await firebase.firestore()
-    .collection('Requests')
-    .orderBy('createdAt')
-    .get();
+    var snapshot = await dbh
+        .collection('requests')
+        .orderBy('createdAt')
+        .get()
 
     snapshot.forEach((doc) => {
         requestList.push(doc.data());
     });
 
-    requests(requestList);
+    console.log(requestList);
+
+    requestsReceived(requestList);
 }
-*/

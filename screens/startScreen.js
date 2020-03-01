@@ -1,5 +1,6 @@
 import * as React from "react";
 import {
+    Dimensions,
     Image,
     Platform,
     StyleSheet,
@@ -25,9 +26,9 @@ export default function startScreen({ navigation }) {
     //called when button is pressed
     const pressHandler = () => {
         //navigate to another screen
+        navigation.push("MapScreen");
         navigation.push("Loading");
-        // setTimeout(() => { navigation.pop(); }, 2000);
-        setTimeout(() => { navigation.push("MapScreen"); }, 2000);
+        setTimeout(() => { navigation.pop(); }, 2000);
     };
 
     const pressHandler2 = () => {
@@ -36,6 +37,7 @@ export default function startScreen({ navigation }) {
 
     return (
         <View style={styles.container}>
+            <Image source={require("../assets/images/icon.png")} style={styles.imageSize}></Image>
             <View style={styles.b1}>
                 <AwesomeButtonRick onPress={pressHandler}
                     type="primary"
@@ -50,7 +52,7 @@ export default function startScreen({ navigation }) {
                 </AwesomeButtonRick>
             </View>
 
-        </View>
+        </View >
     );
 
 
@@ -58,9 +60,9 @@ export default function startScreen({ navigation }) {
 
 }
 
-// startScreen.navigationOptions = {
-//   header: null
-// };
+startScreen.navigationOptions = {
+    header: null
+};
 
 const styles = StyleSheet.create({
     container: {
@@ -71,5 +73,9 @@ const styles = StyleSheet.create({
     },
     b1: {
         padding: 15
-    }
+    },
+    imageSize: {
+        height: Math.round(Dimensions.get('window').height) / 3,
+        width: Math.round(Dimensions.get('window').height) / 3,
+    },
 });

@@ -33,6 +33,11 @@ export default class Loading extends React.Component {
   }
 }
 
+
+Loading.navigationOptions = {
+  header: null
+};
+
 const styles = StyleSheet.create({
   animationContainer: {
     backgroundColor: '#fff',
