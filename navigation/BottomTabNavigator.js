@@ -33,10 +33,10 @@ export default function BottomTabNavigator({ navigation, route }) {
         }}
       />
       <BottomTab.Screen
-        name="Links"
+        name="Reservation"
         component={LinksScreen}
         options={{
-          title: 'Resources',
+          title: 'Reservation',
           tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="ios-cloud" />,
         }}
       />
@@ -52,8 +52,8 @@ function getHeaderTitle(route) {
   switch (routeName) {
     case 'Home':
       return 'How to get started';
-    case 'Links':
-      return 'Links to learn more';
+    case 'Reservation':
+      return 'Reservation Status';
     case 'Map':
       return 'This is the map';
   }
