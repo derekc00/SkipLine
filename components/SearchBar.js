@@ -32,6 +32,7 @@ export default class MySearchBar extends React.Component {
                 placeholder="Enter destination..."
                 value=
             </TextInput> */}
+      //
 
         </View>
       
