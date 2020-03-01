@@ -9,44 +9,44 @@ import { Request } from '../consumerRequests';
 import { sendRequest } from '../firebaseFunctions';
 
 export default function HomeScreen() {
-  
+
   const request = new Request();
   return (
     <View style={styles.container}>
-      <Text>Enter name:</Text> 
-      <TextInput 
-      style={styles.inputName}
-      placeholder='e.g. David'
-      onChangeText={(name) => request.name = name}/>
+      <Text>Enter name:</Text>
+      <TextInput
+        style={styles.inputName}
+        placeholder='e.g. David'
+        onChangeText={(name) => request.name = name} />
 
-      <Text>Enter Party Size:</Text> 
-      <TextInput 
-      keyboardType='numeric'
-      style={styles.inputPartySize}
-      placeholder='e.g. 1'
-      onChangeText={(partySize) => request.partySize = partySize}/>
+      <Text>Enter Party Size:</Text>
+      <TextInput
+        keyboardType='numeric'
+        style={styles.inputPartySize}
+        placeholder='e.g. 1'
+        onChangeText={(partySize) => request.partySize = partySize} />
 
-      <Text>Enter bounty:</Text> 
-      <TextInput 
-      keyboardType='numeric'
-      style={styles.inputBounty}
-      placeholder='e.g. 0'
-      onChangeText={(bounty) => request.price = bounty}/>
+      <Text>Enter bounty:</Text>
+      <TextInput
+        keyboardType='numeric'
+        style={styles.inputBounty}
+        placeholder='e.g. 0'
+        onChangeText={(bounty) => request.price = bounty} />
 
-      <View style={{  backgroundColor: 'green',
-                      padding: 3,
-                      borderRadius: 16,
-                      shadowOpacity: 0.5,
-                      alignItems: 'baseline',
-                      justifyContent: 'flex-end'
-                      }}>
+      <View style={{
+        backgroundColor: 'green',
+        padding: 3,
+        borderRadius: 16,
+        shadowOpacity: 0.5,
+        alignItems: 'baseline',
+        justifyContent: 'flex-end'
+      }}>
         <Button onPress={() => {
           sendRequest(request)
-          console.log("button pressed")
           Alert.alert("Request Sent!")
         }}
-        title="send request"
-        color='white'
+          title="send request"
+          color='white'
         >
         </Button>
       </View>
@@ -87,5 +87,5 @@ const styles = StyleSheet.create({
     margin: 10,
     width: 200,
   }
-  
+
 });
