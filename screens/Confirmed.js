@@ -7,6 +7,7 @@ export default class Confirmed extends React.Component {
   constructor(props) {
     super(props);
     this.props = props;
+
   }
   componentDidMount() {
     this.animation.play();
@@ -36,6 +37,10 @@ export default class Confirmed extends React.Component {
     );
   }
 }
+
+Confirmed.navigationOptions = {
+  header: null,
+};
 
 const styles = StyleSheet.create({
   animationContainer: {
