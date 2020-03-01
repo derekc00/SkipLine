@@ -8,9 +8,16 @@ export default function ReservationScreen() {
 
   return (
     <View style={styles.container} contentContainerStyle={styles.contentContainer}>
+
       <Image source = {{uri :"https://images-prod.healthline.com/hlcmsresource/images/AN_images/healthy-eating-ingredients-1296x728-header.jpg"}} style = {styles.imageSize}></Image>
       <Text style={styles.optionText, styles.option}>
-        {'Total: $ '}
+        {'Location: '}
+      </Text>
+      <Text style={styles.optionText, styles.option}>
+        {'Status: '}
+      </Text>
+      <Text style={styles.optionText, styles.option}>
+        {'Total: '}
       </Text>
       <OptionButton
         icon="md-remove-circle"
